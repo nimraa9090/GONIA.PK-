@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Step 2: Open the port
-EXPOSE 5000
+EXPOSE 3000
 
 # Step 3: Start the compiled JavaScript version
 CMD ["npm", "start"]
