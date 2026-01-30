@@ -1,33 +1,37 @@
 {
-  "name": "goniaa-backend",
+  "name": "goniaa-fashion-backend",
   "version": "1.0.0",
-  "description": "Backend API for Goniaa Fashion",
+  "description": "Goniaa Fashion E-commerce Backend API",
   "main": "dist/index.js",
+  "type": "module",
   "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc && echo 'Build successful'",
     "start": "node dist/index.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "build": "tsc --skipLibCheck || true",
-    "db:push": "drizzle-kit push:pg"
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src"
   },
+  "keywords": ["ecommerce", "fashion", "api"],
+  "author": "Goniaa Fashion",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
-    "pg": "^8.11.3",
-    "drizzle-orm": "^0.28.6",
-    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.0",
+    "jsonwebtoken": "^9.1.2",
     "bcryptjs": "^2.4.3",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "axios": "^1.6.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
-    "@types/cors": "^2.8.17",
-    "@types/node": "^20.10.4",
-    "@types/pg": "^8.10.9",
-    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.5",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/bcryptjs": "^2.4.6",
-    "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.3",
-    "drizzle-kit": "^0.19.13"
+    "tsx": "^4.7.0",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
   }
 }
