@@ -13,7 +13,7 @@ export function authMiddleware(req: AuthRequest, res: Response, next: NextFuncti
       return res.status(401).json({ error: 'No token provided' });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret');
+    const decoded = jwt.verify(token, (process.env.JWT_SECRET as string) || 'secret') as any;
     req.user = decoded;
     next();
   } catch (error) {
@@ -22,7 +22,7 @@ export function authMiddleware(req: AuthRequest, res: Response, next: NextFuncti
 }
 
 export function generateToken(payload: any) {
-  return jwt.sign(payload, process.env.JWT_SECRET || 'secret', {
+  return jwt.sign(payload, (process.env.JWT_SECRET as string) || 'secret', {
     expiresIn: process.env.JWT_EXPIRY || '7d',
   });
 }
