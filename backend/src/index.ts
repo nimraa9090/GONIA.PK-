@@ -54,7 +54,7 @@ app.use((req: Request, res: Response) => {
 async function start() {
   try {
     await initializeDatabase();
-    app.listen(PORT, () => {
+    app.listen(PORT,"0.0.0.0",() => {
       console.log(`✓ Server running on http://localhost:${PORT}`);
       console.log(`✓ API available at http://localhost:${PORT}/api`);
     });
