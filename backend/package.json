@@ -1,19 +1,10 @@
-{
-  "name": "goniaa-fashion-backend",
+ {
+  "name": "goniaa-backend",
   "version": "1.0.0",
-  "description": "Goniaa Fashion E-commerce Backend API",
-  "main": "dist/index.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc && echo 'Build successful'",
-    "start": "PORT=3000 node dist/index.js",
-    "lint": "eslint src --ext .ts",
-    "format": "prettier --write src"
+    "start": "node index.js"
   },
-  "keywords": ["ecommerce", "fashion", "api"],
-  "author": "Goniaa Fashion",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.18.2",
     "cors": "^2.8.5",
@@ -24,14 +15,7 @@
     "zod": "^3.22.4",
     "axios": "^1.6.2"
   },
-  "devDependencies": {
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.10.5",
-    "@types/jsonwebtoken": "^9.0.7",
-    "@types/bcryptjs": "^2.4.6",
-    "typescript": "^5.3.3",
-    "tsx": "^4.7.0",
-    "eslint": "^8.56.0",
-    "prettier": "^3.1.1"
+  "engines": {
+    "node": "16.x"
   }
 }
