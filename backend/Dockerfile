@@ -1,20 +1,20 @@
-# Use a Node.js base image (Alpine version is smaller and faster)
-FROM node:18-alpine
+ FROM node:18-alpine
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package files first to optimize build speed
+# Copy package files
 COPY package*.json ./
 
-# Install all dependencies (using npm install or npm ci)
+# Install dependencies including typescript
 RUN npm install
 
-# Copy the rest of your backend code
+# Copy all source code
 COPY . .
 
-# Expose the port your backend uses (matches your dashboard setting)
+# Build the TypeScript code into JavaScript
+RUN npm run build
+
 EXPOSE 5000
 
-# Start the application
+# Start the BUILT version of the app
 CMD ["npm", "start"]
